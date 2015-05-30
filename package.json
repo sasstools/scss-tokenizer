@@ -4,7 +4,7 @@
   "description": "A tokenzier for Sass' SCSS syntax",
   "main": "index.js",
   "scripts": {
-    "test": "npm test"
+    "test": "git submodule update --init && node test/sass-spec.js"
   },
   "repository": {
     "type": "git",
@@ -29,6 +29,7 @@
     "source-map": "^0.4.2"
   },
   "devDependencies": {
-    "wrench": "^1.5.8"
+    "glob": "^5.0.10",
+    "tripwire": "^0.10.0"
   }
 }

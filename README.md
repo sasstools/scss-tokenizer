@@ -33,6 +33,12 @@ Arguments:
   * `from`: the path to the source CSS file. You should always set `from`,
     because it is used in map generation and in syntax error messages.
     
+# Test
+
+```
+npm test
+```
+
 ## Attribution
 
 This project started as a fork of the [PostCSS](https://github.com/postcss/postcss) tokenizer.
