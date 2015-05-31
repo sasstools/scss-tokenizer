@@ -1,6 +1,11 @@
 # scss-tokenizer
 A tokenzier for Sass' SCSS syntax
 
+![https://travis-ci.org/sasstools/scss-tokenizer.svg?branch=master](https://img.shields.io/travis/sasstools/scss-tokenizer.svg)
+![https://www.npmjs.com/package/scss-tokenizer](https://img.shields.io/npm/v/scss-tokenizer.svg)
+![https://github.com/sasstools/scss-tokenizer/issues](https://img.shields.io/github/issues/sasstools/scss-tokenizer.svg)
+![](https://img.shields.io/github/license/sasstools/scss-tokenizer.svg)
+
 # Install
 
 ```
