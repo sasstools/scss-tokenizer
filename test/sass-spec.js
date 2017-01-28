@@ -7,28 +7,12 @@
 var fs = require('fs');
 var path = require('path');
 var glob = require('glob');
-var tripwire = require('tripwire');
 var spec = require('sass-spec');
 var scss = require('../');
 
-var timeout = 3000;
 var contents, file, errorFile, i;
 var fails = [];
 var files = glob.sync(path.join(spec.dirname, 'spec/**/input.scss'));
-
-// -----------------------------------------------------------------------------
-// We use tripwire to detect a long running process. If the process runs too
-// long we kill it and exit(1).
-// -----------------------------------------------------------------------------
-
-process.on('uncaughtException', function (e) {
-    if (undefined !== tripwire.getContext()) {
-        console.log('The event loop was blocked for longer than ' + timeout + ' milliseconds');
-    }
-    process.exit(1);
-});
-
-tripwire.resetTripwire(timeout, {});
 
 // -----------------------------------------------------------------------------
 // Tokenize sass-spec. The tokenizer have any error conditions.

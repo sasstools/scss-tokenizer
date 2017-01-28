@@ -30,7 +30,6 @@
   },
   "devDependencies": {
     "glob": "^5.0.10",
-    "sass-spec": "^3.5.0-1",
-    "tripwire": "^0.10.0"
+    "sass-spec": "^3.5.0-1"
   }
 }
