@@ -19,14 +19,18 @@ var files = glob.sync(path.join(spec.dirname, 'spec/**/input.scss'));
 // If an uncaught exception is thrown we report the failure to the user.
 // -----------------------------------------------------------------------------
 
-for(i = 0; i < files.length; i++) {
-    file = files[i];
-    errorFile = path.join(path.dirname(file), 'error');
+describe('Sass spec', function() {
+    it('should tokenize all specs', function() {
+        for(i = 0; i < files.length; i++) {
+            file = files[i];
+            errorFile = path.join(path.dirname(file), 'error');
 
-    try {
-        if (fs.statSync(errorFile)) continue;
-    } catch (e) { }
+            try {
+                if (fs.statSync(errorFile)) continue;
+            } catch (e) { }
 
-    contents = fs.readFileSync(file, { encoding: 'utf8' });
-    scss.tokenize(contents);
-}
+            contents = fs.readFileSync(file, { encoding: 'utf8' });
+            scss.tokenize(contents);
+        }
+    }).timeout(15000);
+});

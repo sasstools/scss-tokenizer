@@ -4,7 +4,7 @@
   "description": "A tokenzier for Sass' SCSS syntax",
   "main": "index.js",
   "scripts": {
-    "test": "node test/sass-spec.js"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -29,7 +29,9 @@
     "source-map": "^0.4.2"
   },
   "devDependencies": {
+    "chai": "^3.5.0",
     "glob": "^5.0.10",
+    "mocha": "^3.2.0",
     "sass-spec": "^3.5.0-1"
   }
 }
