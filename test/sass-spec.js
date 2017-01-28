@@ -5,14 +5,16 @@
 // -----------------------------------------------------------------------------
 
 var fs = require('fs');
+var path = require('path');
 var glob = require('glob');
 var tripwire = require('tripwire');
+var spec = require('sass-spec');
 var scss = require('../');
 
-var contents, file, i;
 var timeout = 3000;
+var contents, file, errorFile, i;
 var fails = [];
-var files = glob.sync('./test/sass-spec/spec/**/input.scss');
+var files = glob.sync(path.join(spec.dirname, 'spec/**/input.scss'));
 
 // -----------------------------------------------------------------------------
 // We use tripwire to detect a long running process. If the process runs too
@@ -35,6 +37,12 @@ tripwire.resetTripwire(timeout, {});
 
 for(i = 0; i < files.length; i++) {
     file = files[i];
-    var contents = fs.readFileSync(file, { encoding: 'utf8' });
+    errorFile = path.join(path.dirname(file), 'error');
+
+    try {
+        if (fs.statSync(errorFile)) continue;
+    } catch (e) { }
+
+    contents = fs.readFileSync(file, { encoding: 'utf8' });
     scss.tokenize(contents);
 }
