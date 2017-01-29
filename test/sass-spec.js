@@ -32,5 +32,5 @@ describe('Sass spec', function() {
             contents = fs.readFileSync(file, { encoding: 'utf8' });
             scss.tokenize(contents);
         }
-    }).timeout(15000);
+    }).timeout(30000);
 });
