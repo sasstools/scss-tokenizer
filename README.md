@@ -14,19 +14,20 @@ npm install scss-tokenizer
 
 # Usage
 
-```
-scss.tokenize(css)
+```js
+var scss = require('scss-tokenizer');
+scss.tokenize(css);
 ```
 
 # API
 
 ### `tokenize`
 
-Tokenizes source `css` and returns an ordered array of tokens with positional 
+Tokenizes source `css` and returns an ordered array of tokens with positional
 data.
 
 ```js
-var tokenize = require('scss-tokenizer');
+var tokenizer = require('scss-tokenizer');
 var tokens = tokenize.tokenize(css);
 ```
 
@@ -37,7 +38,7 @@ Arguments:
 * `opts (object) optional`: options:
   * `from`: the path to the source CSS file. You should always set `from`,
     because it is used in map generation and in syntax error messages.
-    
+
 # Test
 
 ```
