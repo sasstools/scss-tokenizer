@@ -69,4 +69,17 @@ describe('Comment', function() {
             scss.tokenize(fixture('docblock-comment.scss'))
         );
     });
+
+    it('should tokenize a comment that does not have a space before the end', function() {
+        assert.deepEqual(
+            [
+                ['startComment', '/*', 1, 2],
+                ['word', 'my', 1, 3, 1, 4],
+                ['space', ' '],
+                ['word', 'comment', 1, 6, 1, 12],
+                ['endComment', '*/', 1, 14],
+            ],
+            scss.tokenize(fixture('comment-with-trailing-space.scss'))
+        );
+    });
 });
