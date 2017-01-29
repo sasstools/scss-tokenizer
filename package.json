@@ -1,6 +1,6 @@
 {
   "name": "scss-tokenizer",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A tokenzier for Sass' SCSS syntax",
   "main": "index.js",
   "scripts": {
