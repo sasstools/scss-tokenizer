@@ -9,6 +9,9 @@
     "build": "npm run clean; babel src/ --out-dir lib",
     "prepublishOnly": "npm run build"
   },
+  "files": [
+    "lib"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/sasstools/scss-tokenizer.git"
