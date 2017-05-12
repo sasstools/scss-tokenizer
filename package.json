@@ -10,6 +10,7 @@
     "prepublishOnly": "npm run build"
   },
   "files": [
+    "index.js",
     "lib"
   ],
   "repository": {
