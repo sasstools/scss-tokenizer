@@ -38,13 +38,18 @@ export default class PreviousMap {
     decodeInline(text) {
         let uri    = 'data:application/json,';
         let base64 = 'data:application/json;base64,';
+        var utfd64 = 'data:application/json;charset=utf-8;base64,';
+        var utf64  = 'data:application/json;charset=utf8;base64,';
 
         if ( this.startWith(text, uri) ) {
             return decodeURIComponent( text.substr(uri.length) );
 
         } else if ( this.startWith(text, base64) ) {
             return Base64.decode( text.substr(base64.length) );
-
+        } else if (this.startWith(text, utfd64)) {
+            return _jsBase.Base64.decode(text.substr(utfd64.length));
+        } else if (this.startWith(text, utf64)) {
+            return _jsBase.Base64.decode(text.substr(utf64.length));
         } else {
             let encoding = text.match(/data:application\/json;([^,]+),/)[1];
             throw new Error('Unsupported source map encoding ' + encoding);
