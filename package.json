@@ -1,6 +1,6 @@
 {
   "name": "scss-tokenizer",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "A tokenzier for Sass' SCSS syntax",
   "main": "index.js",
   "scripts": {
@@ -29,6 +29,9 @@
     "url": "https://github.com/sasstools/scss-tokenizer/issues"
   },
   "homepage": "https://github.com/sasstools/scss-tokenizer",
+  "bundledDependencies": [
+    "js-base64", "source-map"
+  ],
   "dependencies": {
     "js-base64": "^2.1.8",
     "source-map": "^0.4.2"
