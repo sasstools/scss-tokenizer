@@ -3,7 +3,7 @@
 node_modules
 
 # Built files
-lib
+# lib
 
 # Metadata
 .DS_Store

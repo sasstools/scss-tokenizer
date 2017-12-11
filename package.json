@@ -1,6 +1,6 @@
 {
   "name": "scss-tokenizer",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "A tokenzier for Sass' SCSS syntax",
   "main": "index.js",
   "scripts": {
@@ -14,7 +14,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/sasstools/scss-tokenizer.git"
+    "url": "https://github.com/logansgraphicd/scss-tokenizer.git"
   },
   "keywords": [
     "parser",
@@ -26,9 +26,9 @@
   "author": "xzyfer",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/sasstools/scss-tokenizer/issues"
+    "url": "https://github.com/logansgraphicd/scss-tokenizer/issues"
   },
-  "homepage": "https://github.com/sasstools/scss-tokenizer",
+  "homepage": "https://github.com/logansgraphicd/scss-tokenizer",
   "dependencies": {
     "js-base64": "^2.1.8",
     "source-map": "^0.4.2"
