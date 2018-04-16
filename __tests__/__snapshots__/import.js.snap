@@ -1,0 +1,327 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`@import should tokenize a @import with double quotes 1`] = `
+Array [
+  Array [
+    "@",
+    "@",
+    1,
+    1,
+  ],
+  Array [
+    "ident",
+    "import",
+    1,
+    2,
+    1,
+    7,
+  ],
+  Array [
+    "space",
+    " ",
+  ],
+  Array [
+    "\\"",
+    "\\"",
+    1,
+    9,
+  ],
+  Array [
+    "string",
+    "foo",
+    1,
+    10,
+    1,
+    12,
+  ],
+  Array [
+    "\\"",
+    "\\"",
+    1,
+    13,
+  ],
+  Array [
+    ";",
+    ";",
+    1,
+    14,
+  ],
+  Array [
+    "newline",
+    "
+",
+    2,
+    0,
+  ],
+]
+`;
+
+exports[`@import should tokenize a @import with double quotes and slash 1`] = `
+Array [
+  Array [
+    "@",
+    "@",
+    1,
+    1,
+  ],
+  Array [
+    "ident",
+    "import",
+    1,
+    2,
+    1,
+    7,
+  ],
+  Array [
+    "space",
+    " ",
+  ],
+  Array [
+    "\\"",
+    "\\"",
+    1,
+    9,
+  ],
+  Array [
+    "string",
+    "foo/bar",
+    1,
+    10,
+    1,
+    16,
+  ],
+  Array [
+    "\\"",
+    "\\"",
+    1,
+    17,
+  ],
+  Array [
+    ";",
+    ";",
+    1,
+    18,
+  ],
+  Array [
+    "newline",
+    "
+",
+    2,
+    0,
+  ],
+]
+`;
+
+exports[`@import should tokenize a @import with single quotes 1`] = `
+Array [
+  Array [
+    "@",
+    "@",
+    1,
+    1,
+  ],
+  Array [
+    "ident",
+    "import",
+    1,
+    2,
+    1,
+    7,
+  ],
+  Array [
+    "space",
+    " ",
+  ],
+  Array [
+    "'",
+    "'",
+    1,
+    9,
+  ],
+  Array [
+    "string",
+    "foo",
+    1,
+    10,
+    1,
+    12,
+  ],
+  Array [
+    "'",
+    "'",
+    1,
+    13,
+  ],
+  Array [
+    ";",
+    ";",
+    1,
+    14,
+  ],
+  Array [
+    "newline",
+    "
+",
+    2,
+    0,
+  ],
+]
+`;
+
+exports[`@import should tokenize a @import with single quotes and slash 1`] = `
+Array [
+  Array [
+    "@",
+    "@",
+    1,
+    1,
+  ],
+  Array [
+    "ident",
+    "import",
+    1,
+    2,
+    1,
+    7,
+  ],
+  Array [
+    "space",
+    " ",
+  ],
+  Array [
+    "'",
+    "'",
+    1,
+    9,
+  ],
+  Array [
+    "string",
+    "foo/bar",
+    1,
+    10,
+    1,
+    16,
+  ],
+  Array [
+    "'",
+    "'",
+    1,
+    17,
+  ],
+  Array [
+    ";",
+    ";",
+    1,
+    18,
+  ],
+  Array [
+    "newline",
+    "
+",
+    2,
+    0,
+  ],
+]
+`;
+
+exports[`@import should tokenize a @import without quotes 1`] = `
+Array [
+  Array [
+    "@",
+    "@",
+    1,
+    1,
+  ],
+  Array [
+    "ident",
+    "import",
+    1,
+    2,
+    1,
+    7,
+  ],
+  Array [
+    "space",
+    " ",
+  ],
+  Array [
+    "ident",
+    "foo",
+    1,
+    9,
+    1,
+    11,
+  ],
+  Array [
+    ";",
+    ";",
+    1,
+    12,
+  ],
+  Array [
+    "newline",
+    "
+",
+    2,
+    0,
+  ],
+]
+`;
+
+exports[`@import should tokenize a @import without quotes and slash 1`] = `
+Array [
+  Array [
+    "@",
+    "@",
+    1,
+    1,
+  ],
+  Array [
+    "ident",
+    "import",
+    1,
+    2,
+    1,
+    7,
+  ],
+  Array [
+    "space",
+    " ",
+  ],
+  Array [
+    "ident",
+    "foo",
+    1,
+    9,
+    1,
+    11,
+  ],
+  Array [
+    "/",
+    "/",
+    1,
+    12,
+  ],
+  Array [
+    "ident",
+    "bar",
+    1,
+    13,
+    1,
+    15,
+  ],
+  Array [
+    ";",
+    ";",
+    1,
+    16,
+  ],
+  Array [
+    "newline",
+    "
+",
+    2,
+    0,
+  ],
+]
+`;
