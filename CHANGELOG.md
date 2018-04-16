@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file.
 ## [next]
 ### BREAKING CHANGES
 
+### Features
+
+### Fixes
+
+### Tests
+
+### Dependencies
+
+
+## [0.3.0]
+### BREAKING CHANGES
+
 - Drop support Node < 6 (@akkumar, #16)
   - required by source-map@0.7.2
 
@@ -12,6 +24,8 @@ All notable changes to this project will be documented in this file.
 ### Fixes
 
 ### Tests
+
+- Migrate to jest for tests (@xzyfer, #17)
 
 ### Dependencies
 
