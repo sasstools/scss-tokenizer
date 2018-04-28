@@ -200,7 +200,7 @@ export default function tokenize(input, l, p) {
                 if ( inComment && code === asterisk && css.charCodeAt(pos + 1) === slash ) {
                     inComment = false;
                     tokens.push(['endComment', '*/', line, pos + 1 - offset]);
-                    pos += 2;
+                    pos += 1;
                     break;
                 }
 
