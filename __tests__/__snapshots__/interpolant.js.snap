@@ -1,0 +1,234 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`interpolant should tokenize interpolant decimal 1`] = `
+Array [
+  Array [
+    "startInterpolant",
+    "#{",
+    1,
+    2,
+  ],
+  Array [
+    "number",
+    "1.0",
+    1,
+    3,
+    1,
+    5,
+  ],
+  Array [
+    "endInterpolant",
+    "}",
+    1,
+    6,
+  ],
+  Array [
+    "newline",
+    "
+",
+    2,
+    0,
+  ],
+  Array [
+    "startInterpolant",
+    "#{",
+    2,
+    2,
+  ],
+  Array [
+    "number",
+    "10.00",
+    2,
+    10,
+    2,
+    14,
+  ],
+  Array [
+    "endInterpolant",
+    "}",
+    2,
+    15,
+  ],
+  Array [
+    "newline",
+    "
+",
+    3,
+    0,
+  ],
+  Array [
+    "startInterpolant",
+    "#{",
+    3,
+    2,
+  ],
+  Array [
+    "number",
+    ".100",
+    3,
+    19,
+    3,
+    22,
+  ],
+  Array [
+    "endInterpolant",
+    "}",
+    3,
+    23,
+  ],
+  Array [
+    "newline",
+    "
+",
+    4,
+    0,
+  ],
+]
+`;
+
+exports[`interpolant should tokenize interpolant number 1`] = `
+Array [
+  Array [
+    "startInterpolant",
+    "#{",
+    1,
+    2,
+  ],
+  Array [
+    "number",
+    "1",
+    1,
+    3,
+    1,
+    3,
+  ],
+  Array [
+    "endInterpolant",
+    "}",
+    1,
+    4,
+  ],
+  Array [
+    "newline",
+    "
+",
+    2,
+    0,
+  ],
+  Array [
+    "startInterpolant",
+    "#{",
+    2,
+    2,
+  ],
+  Array [
+    "number",
+    "123",
+    2,
+    8,
+    2,
+    10,
+  ],
+  Array [
+    "endInterpolant",
+    "}",
+    2,
+    11,
+  ],
+  Array [
+    "newline",
+    "
+",
+    3,
+    0,
+  ],
+]
+`;
+
+exports[`interpolant should tokenize interpolant quoted-string 1`] = `
+Array [
+  Array [
+    "startInterpolant",
+    "#{",
+    1,
+    2,
+  ],
+  Array [
+    "\\"",
+    "\\"",
+    1,
+    3,
+  ],
+  Array [
+    "string",
+    "hello world!",
+    1,
+    4,
+    1,
+    15,
+  ],
+  Array [
+    "\\"",
+    "\\"",
+    1,
+    16,
+  ],
+  Array [
+    "endInterpolant",
+    "}",
+    1,
+    17,
+  ],
+  Array [
+    "newline",
+    "
+",
+    2,
+    0,
+  ],
+]
+`;
+
+exports[`interpolant should tokenize interpolant unquoted-string 1`] = `
+Array [
+  Array [
+    "startInterpolant",
+    "#{",
+    1,
+    2,
+  ],
+  Array [
+    "ident",
+    "hello",
+    1,
+    3,
+    1,
+    7,
+  ],
+  Array [
+    "space",
+    " ",
+  ],
+  Array [
+    "ident",
+    "world",
+    1,
+    9,
+    1,
+    13,
+  ],
+  Array [
+    "endInterpolant",
+    "}",
+    1,
+    14,
+  ],
+  Array [
+    "newline",
+    "
+",
+    2,
+    0,
+  ],
+]
+`;

@@ -102,13 +102,8 @@ export default function tokenize(input, l, p) {
                 break;
 
             case closeCurly:
-                if (inInterpolant) {
-                    inInterpolant = false;
-                    tokens.push(['endInterpolant', '}', line, pos - offset]);
-                } else {
-                    break loop;
-                }
-                break;
+                tokens.push(['endInterpolant', '}', line, pos - offset]);
+                break loop;
 
             case comma:
                 tokens.push([',', ',', line, pos - offset]);
