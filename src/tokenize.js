@@ -139,9 +139,11 @@ export default function tokenize(input, l, p) {
                 tokens.push([quote, quote, line, pos - offset]);
                 next = pos + 1;
 
-                let { tokens: t, pos: p } = tokenizeString(input, line, next, quote);
+                let { tokens: t, line: l, pos: p, offset: o } = tokenizeString(input, line, next, offset, quote);
                 tokens = tokens.concat(t);
                 next = p;
+                line = l;
+                offset = o;
 
                 pos = next;
                 break;
@@ -182,7 +184,7 @@ export default function tokenize(input, l, p) {
                     tokens.push(['startComment', '/*', line, pos + 1 - offset]);
                     next = pos + 1;
 
-                    let { tokens: t, line: l, pos: p, offset: o } = tokenizeComment(input, line, next + 1);
+                    let { tokens: t, line: l, pos: p, offset: o } = tokenizeComment(input, line, next + 1, offset);
                     tokens = tokens.concat(t);
                     next = p;
                     line = l;
@@ -214,9 +216,11 @@ export default function tokenize(input, l, p) {
                     tokens.push(['startInterpolant', '#{', line, pos + 1 - offset]);
                     next = pos + 1;
 
-                    let { tokens: t, pos: p } = tokenizeInterpolant(input, line, next + 1);
+                    let { tokens: t, line: l, pos: p, offset: o } = tokenizeInterpolant(input, line, next + 1, offset);
                     tokens = tokens.concat(t);
                     next = p;
+                    line = l;
+                    offset = o;
 
                     pos = next;
                     break;

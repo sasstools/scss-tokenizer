@@ -33,7 +33,7 @@ let singleQuote  = "'".charCodeAt(0),
     wordEnd      = /[ \n\t\r\(\)\{\},:;@!'"\\]|\/(?=\*)|#(?={)/g,
     ident        = /-?([a-z_]|\\[^\\])([a-z-_0-9]|\\[^\\])*/gi;
 
-export default function tokenize(input, l, p) {
+export default function tokenize(input, l, p, o) {
     let tokens = [];
     let css    = input.css.valueOf();
 
@@ -42,7 +42,7 @@ export default function tokenize(input, l, p) {
         inInterpolant, inComment, inString;
 
     let length = css.length;
-    let offset = -1;
+    let offset =  o || -1;
     let line   =  l || 1;
     let pos    =  p || 0;
 
@@ -135,9 +135,11 @@ export default function tokenize(input, l, p) {
                 tokens.push([quote, quote, line, pos - offset]);
                 next = pos + 1;
 
-                let { tokens: t, pos: p } = tokenizeString(input, line, next, quote);
+                let { tokens: t, line: l, pos: p, offset: o } = tokenizeString(input, line, next, offset, quote);
                 tokens = tokens.concat(t);
                 next = p;
+                line = l;
+                offset = o;
 
                 pos = next;
                 break;
@@ -178,7 +180,7 @@ export default function tokenize(input, l, p) {
                     tokens.push(['startComment', '/*', line, pos + 1 - offset]);
                     next = pos + 1;
 
-                    let { tokens: t, line: l, pos: p, offset: o } = tokenizeComment(input, line, next + 1);
+                    let { tokens: t, line: l, pos: p, offset: o } = tokenizeComment(input, line, next + 1, offset);
                     tokens = tokens.concat(t);
                     next = p;
                     line = l;
@@ -277,5 +279,5 @@ export default function tokenize(input, l, p) {
         pos++;
     }
 
-    return { tokens, pos };
+    return { tokens, line, pos, offset };
 }
