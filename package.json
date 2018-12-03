@@ -31,7 +31,7 @@
   "homepage": "https://github.com/sasstools/scss-tokenizer",
   "dependencies": {
     "js-base64": "^2.4.9",
-    "source-map": "^0.7.1"
+    "source-map": "^0.7.3"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
