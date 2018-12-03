@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest",
     "clean": "rm lib/*",
-    "build": "npm run clean; babel src/ --out-dir lib"
+    "build": "npm run clean; babel src/ --out-dir lib",
+    "prepublishOnly": "npm run build"
   },
   "files": [
     "index.js",
