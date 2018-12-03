@@ -36,14 +36,22 @@ export default class PreviousMap {
     }
 
     decodeInline(text) {
+        let utfd64 = 'data:application/json;charset=utf-8;base64,';
+        let utf64  = 'data:application/json;charset=utf8;base64,';
+        let b64    = 'data:application/json;base64,';
         let uri    = 'data:application/json,';
-        let base64 = 'data:application/json;base64,';
 
         if ( this.startWith(text, uri) ) {
             return decodeURIComponent( text.substr(uri.length) );
 
         } else if ( this.startWith(text, base64) ) {
             return Base64.decode( text.substr(base64.length) );
+
+        } else if ( this.startWith(text, utf64) ) {
+            return Base64.decode( text.substr(utf64.length) );
+
+        } else if ( this.startWith(text, utfd64) ) {
+            return Base64.decode( text.substr(utfd64.length) );
 
         } else {
             let encoding = text.match(/data:application\/json;([^,]+),/)[1];
