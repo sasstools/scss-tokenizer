@@ -18,7 +18,7 @@ let singleQuote    = "'".charCodeAt(0),
     sQuoteEnd      = /([.\s]*?)[^\\](?=((#{)|'))/gm,
     dQuoteEnd      = /([.\s]*?)[^\\](?=((#{)|"))/gm;
 
-export default function tokenize(input, l, p, quote) {
+export default function tokenize(input, l, p, o, quote) {
     let tokens = [];
     let css    = input.css.valueOf();
 
@@ -27,7 +27,7 @@ export default function tokenize(input, l, p, quote) {
         inInterpolant, inComment, inString;
 
     let length = css.length;
-    let offset = -1;
+    let offset =  o || -1;
     let line   =  l || 1;
     let pos    =  p || 0;
 
@@ -81,12 +81,13 @@ export default function tokenize(input, l, p, quote) {
                     tokens.push(['startInterpolant', '#{', line, pos + 1 - offset]);
                     next = pos + 1;
 
-                    let { tokens: t, pos: p } = tokenizeInterpolant(input, line, next + 1);
+                    let { tokens: t, line: l, pos: p, offset: o } = tokenizeInterpolant(input, line, next + 1, offset);
                     tokens = tokens.concat(t);
                     next = p;
+                    line = l;
+                    offset = o;
 
                     pos = next;
-
                 } else {
                     quoteEnd.lastIndex = pos;
                     quoteEnd.test(css);
@@ -111,5 +112,5 @@ export default function tokenize(input, l, p, quote) {
         pos++;
     }
 
-    return { tokens, pos };
+    return { tokens, line, pos, offset };
 }

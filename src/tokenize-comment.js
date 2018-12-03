@@ -15,7 +15,7 @@ let newline    = '\n'.charCodeAt(0),
     asterisk   = '*'.charCodeAt(0),
     wordEnd    = /[ \n\t\r\(\)\{\},:;@!'"\\]|\*(?=\/)|#(?={)/g;
 
-export default function tokenize(input, l, p) {
+export default function tokenize(input, l, p, o) {
     let tokens = [];
     let css    = input.css.valueOf();
 
@@ -24,7 +24,7 @@ export default function tokenize(input, l, p) {
         inInterpolant, inComment, inString;
 
     let length = css.length;
-    let offset = -1;
+    let offset =  o || -1;
     let line   =  l || 1;
     let pos    =  p || 0;
 
@@ -102,9 +102,11 @@ export default function tokenize(input, l, p) {
                     tokens.push(['startInterpolant', '#{', line, pos + 1 - offset]);
                     next = pos + 1;
 
-                    let { tokens: t, pos: p } = tokenizeInterpolant(input, line, next + 1);
+                    let { tokens: t, line: l, pos: p, offset: o } = tokenizeInterpolant(input, line, next + 1, offset);
                     tokens = tokens.concat(t);
                     next = p;
+                    line = l;
+                    offset = o;
 
                     pos = next;
                     break;
