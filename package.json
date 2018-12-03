@@ -30,7 +30,7 @@
   },
   "homepage": "https://github.com/sasstools/scss-tokenizer",
   "dependencies": {
-    "js-base64": "^2.4.3",
+    "js-base64": "^2.4.9",
     "source-map": "^0.7.1"
   },
   "devDependencies": {
