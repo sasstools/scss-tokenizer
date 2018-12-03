@@ -1,9 +1,12 @@
 language: node_js
 branches: [master]
 node_js:
-  - "lts/boron"
-  - "lts/carbon"
-  - "current"
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
 script:
   - npm run build
   - npm run test
