@@ -39,7 +39,7 @@
     "babel-core": "^6.26.3",
     "babel-jest": "^29.0.2",
     "babel-preset-env": "^1.7.0",
-    "glob": "^8.0.3",
+    "glob": "^10.1.0",
     "jest": "^29.0.3",
     "sass-spec": "3.5.4"
   }
