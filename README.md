@@ -1,10 +1,12 @@
+A fork to fix critical issues with this package.
+
 # scss-tokenizer
 A tokenizer for Sass' SCSS syntax
 
 ![https://travis-ci.org/sasstools/scss-tokenizer.svg?branch=master](https://img.shields.io/travis/sasstools/scss-tokenizer.svg)
 ![https://www.npmjs.com/package/scss-tokenizer](https://img.shields.io/npm/v/scss-tokenizer.svg)
-![https://github.com/sasstools/scss-tokenizer/issues](https://img.shields.io/github/issues/sasstools/scss-tokenizer.svg)
-![](https://img.shields.io/github/license/sasstools/scss-tokenizer.svg)
+![https://github.com/konzepts/scss-tokenizer/issues](https://img.shields.io/github/issues/sasstools/scss-tokenizer.svg)
+![](https://img.shields.io/github/license/konzepts/scss-tokenizer.svg)
 
 # Install
 
